@@ -1,6 +1,7 @@
 node {
   stage('Checkout') {
-    checkout scm
+    // checkout scm
+    git url: 'https://github.com/PascalBourdier/testjenkins-hieradata.git', branch: 'master'
   }
 
   stage('Check syntax') {
