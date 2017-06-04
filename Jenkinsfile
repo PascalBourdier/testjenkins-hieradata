@@ -18,6 +18,7 @@ node {
   }
 
   stage('yaml-lint') {
+    println "pwd".execute().text
     println "ls -la".execute().text
     println "yaml-lint .".execute().text
   }
