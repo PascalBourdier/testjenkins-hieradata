@@ -4,6 +4,8 @@ node {
   }
 
   stage('Check syntax') {
-    sh 'yaml-lint .'
+    ansiColor('xterm') {
+      sh 'yaml-lint -i .'
+    }
   }
 }
