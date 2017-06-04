@@ -16,8 +16,9 @@ node {
     def readme_md = readFile('README.md')
     echo readme_md
   }
-  
+
   stage('yaml-lint') {
+    println "ls -la".execute().text
     println "yaml-lint .".execute().text
   }
 
