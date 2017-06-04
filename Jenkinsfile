@@ -18,7 +18,7 @@ node {
   }
   
   stage('yaml-lint') {
-    "yaml-lint .".execute()
+    println "yaml-lint .".execute().text
   }
 
 }
