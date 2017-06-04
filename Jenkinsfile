@@ -14,6 +14,7 @@ node {
     unstash 'all'
     def readme_md = readFile('README.md')
     echo readme_md
+    println "pwd".execute().text
   }
 
   stage('yaml-lint') {
