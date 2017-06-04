@@ -5,14 +5,20 @@ node {
     checkout scm
   }
 
-  stash includes: '*', name: 'readme'
+  stash includes: '*', name: 'all'
 
 }
 
 node {
+  unstash 'all'
+
   stage('Readme') {
-    unstash 'readme'
     def readme_md = readFile('README.md')
     echo readme_md
   }
+  
+  stage('yaml-lint') {
+    "yaml-lint .".execute()
+  }
+
 }
